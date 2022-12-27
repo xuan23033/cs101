@@ -3,10 +3,13 @@
 int main() {
     int i = 10;
     
-    if(i % 2 != 0)
-       printf("%d 是奇數\n", i);
-    else
-       printf("%d 是偶數\n", i);
-
+    if(i == 0) {
+      printf("\t zero \n");
+    } else if(i % 2 != 0) {
+       printf("\t odd \n");
+    } else {
+       printf("\t even \n");
+    }
+    
     return 0;
 }
