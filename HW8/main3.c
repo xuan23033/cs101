@@ -1,27 +1,28 @@
-#include <stdio.h>
-#define SIZE 32
+#include<stdio.h>
 
-void get_binary(int num) {
-
-    int i, b[SIZE] = {0};
-
-    for(i = 1; i <= SIZE; i++) {
-        b[SIZE - i] = num % 2;
-        num /= 2;
+void get_binary(int n) {
+    
+    int i=0, a[32];
+    while (n > 0) {
+        a[i] = n % 2;   
+        i = i + 1;
+        n = n / 2;
     }
-
-    for(i = 0; i < SIZE; i++)
-        printf("%d", b[i]);
-        printf("\n");
-
+    for(int f=31; f>i-1; f--) {
+        printf("0");
+        if(f % 4 == 0 ) {
+            printf(" ");
+        }
+    }
+    for(i=i-1; i >= 0; i--) {
+        printf("%d", a[i]);
+        if(i % 4 == 0 ) {
+            printf(" ");
+        }
+    }
 }
-
-int main(void) {
-
-    int n=16;
+int main() {
+    int n = 16;
     get_binary(n);
-    
-    
     return 0;
-
 }
